@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pie Message</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="insert_number"><![CDATA[<Insert Number>]]></string>
+    <string name="title_activity_conversation">ConversationActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

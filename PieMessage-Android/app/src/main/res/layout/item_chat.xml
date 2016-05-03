@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/chat_item_padding"
+    android:paddingBottom="@dimen/chat_item_padding"
+    android:layout_marginBottom="13dp">
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/chat_circle"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        >
+        <TextView
+            android:id="@+id/tvChatName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unknown name"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+        <TextView
+            android:id="@+id/tvLastMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message content here"
+            android:ellipsize="end"
+            android:maxLines="1"
+            />
+    </LinearLayout>
+
+</LinearLayout>

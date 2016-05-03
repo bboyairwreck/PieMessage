@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.ericchee.bboyairwreck.piemessage.MessageActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/ablToolbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/rlBackTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                    <TextView
+                        android:id="@+id/tvTo"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="22sp"
+                        android:text="To:"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginRight="10dp"
+                        android:visibility="visible"
+                        />
+                    <ImageButton
+                        android:id="@+id/ibMABackArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"
+                        android:layout_marginLeft="-5dp"
+                        android:layout_marginStart="-5dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:visibility="gone"
+                        />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tvTarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/rlBackTo"
+                    android:layout_toEndOf="@+id/rlBackTo"
+                    android:textSize="22sp"
+                    android:text="@string/insert_number"
+                    android:textColor="#FFFFFF"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/rlBackTo"
+                    android:layout_toEndOf="@+id/rlBackTo"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    >
+                    <EditText
+                        android:id="@+id/etTarget"
+                        android:layout_width="200sp"
+                        android:layout_height="match_parent"
+                        android:textSize="22sp"
+                        android:textColor="#FFFFFF"
+                        android:visibility="invisible"
+                        />
+                    <!-- android:inputType="number" -->
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+                    <ImageButton
+                        android:id="@+id/ibCheckmark"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/checkmark"
+                        android:visibility="invisible"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_message"
+        android:layout_below="@id/ablToolbarContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+</RelativeLayout>
