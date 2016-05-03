@@ -25,6 +25,7 @@ The Android client connects to a socket that whose IP address is of the OSX devi
 ## Requirements
 - OSX device
 - Public IP for OSX device
+- iCloud account w/ iMessage enabled
 - Android device (4.0+)
 
 #### Optional Requirement
@@ -33,11 +34,13 @@ The Android client connects to a socket that whose IP address is of the OSX devi
 
 ## Set up
 ### On OSX Device
-1. Move messages.applescript to your ~ home directory (/Users/<username>).
-2. Open the JavaWebServer/ as a project in IntelliJ. Run the Server class.
-3. Open the PieOSXClient/ as a project in IntelliJ.
-4. Edit the *socketAddress* value in PieOSXClient/src/Constants.java to your public IP address that is linked to your OSX device.
-5. Run PieOSXClient class.
+1. Open the Messages application and add your iCloud account in Messages > Preferences > Accounts.
+2. Clone the PieMessage project onto your OSX Device.
+3. Move /messages.applescript to your ~ home directory (/Users/<username>).
+4. Open the JavaWebServer/ as a project in IntelliJ. Run the Server class.
+5. Open the PieOSXClient/ as a project in IntelliJ.
+6. Edit the *socketAddress* value in PieOSXClient/src/Constants.java to your public IP address that is linked to your OSX device.
+7. Run PieOSXClient class.
 
 ### On Android device
 1. Open PieMessage-Android/ as a project in Android Studio.
