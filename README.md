@@ -20,7 +20,8 @@ There are 4 parts to the PieMessage.
 The [messages.applescript](./messages.applescript) is arguably the most important part of the project. It is what makes sending iMessages possible. This script is what sends an iMessage message.
 
 The [OSX Client](./PieOSXClient) & [JWS](./JavaWebServer) run on any OSX machine (Macbook, Mac, etc.).
-If the OSX Client receives a socket *'outgoing'* JSON message from the JWS, it will call the messages.applescript to send the iMessage. If the OSX Client detects any changes to the "Messages" sqlite database file where a new message has been received, it will send the JWS a socket *'incoming'* JSON message. Incoming messages are detected from a change from the sqlite chat.db of the 'Messages' app whose default location is ~/Library/Messages/chat.db. I have provided a database schema to help visualize the database in the pdf, [MessagesSchema.pdf](./MessagesSchema.pdf). 
+
+If the [OSX Client](./PieOSXClient) detects any changes to the "Messages" sqlite database file where a new message has been received, it will send the JWS a socket *'incoming'* JSON message. Incoming messages are detected from a change from the sqlite chat.db of the 'Messages' app whose default location is ~/Library/Messages/chat.db. I have provided a database schema to help visualize the database in the pdf, [MessagesSchema.pdf](./MessagesSchema.pdf). 
 
 The [JWS](./JavaWebServer) is what connects the OSX Client to the Android client. If the JWS receives a socket 'outgoing' JSON message from the Android client, it will pass it to the OSX Client to tell it to send the iMessage that was requested from the Android. If the JWS recieves a socket *'incoming'* JSON message from the OSX Client, it means the OSX Client has detected a new message and wants the JWS to notify the Android client.
 
@@ -30,8 +31,8 @@ The [Android client](./PieMessage-Android/) connects to a socket that whose IP a
 - OSX device
 - Public IP for OSX device
 - iCloud account w/ iMessage enabled
-- Android device (4.0+)
 - Java JDK
+- Android device (4.0+)
 
 #### Optional Requirement
 - IntelliJ IDEA
