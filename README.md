@@ -19,12 +19,12 @@ There are 4 parts to the PieMessage.
 
 The [messages.applescript](./messages.applescript) is arguably the most important part of the project. It is what makes sending iMessages possible. This script is what sends an iMessage message.
 
-The OSX Client & JWS run on any OSX machine (Macbook, Mac, etc.).
+The [OSX Client](./PieOSXClient) & [JWS](./JavaWebServer) run on any OSX machine (Macbook, Mac, etc.).
 If the OSX Client receives a socket *'outgoing'* JSON message from the JWS, it will call the messages.applescript to send the iMessage. If the OSX Client detects any changes to the "Messages" sqlite database file where a new message has been received, it will send the JWS a socket *'incoming'* JSON message. Incoming messages are detected from a change from the sqlite chat.db of the 'Messages' app whose default location is ~/Library/Messages/chat.db. I have provided a database schema to help visualize the database in the pdf, [MessagesSchema.pdf](./MessagesSchema.pdf). 
 
-The JWS is what connects the OSX Client to the Android client. If the JWS receives a socket 'outgoing' JSON message from the Android client, it will pass it to the OSX Client to tell it to send the iMessage that was requested from the Android. If the JWS recieves a socket *'incoming'* JSON message from the OSX Client, it means the OSX Client has detected a new message and wants the JWS to notify the Android client.
+The [JWS](./JavaWebServer) is what connects the OSX Client to the Android client. If the JWS receives a socket 'outgoing' JSON message from the Android client, it will pass it to the OSX Client to tell it to send the iMessage that was requested from the Android. If the JWS recieves a socket *'incoming'* JSON message from the OSX Client, it means the OSX Client has detected a new message and wants the JWS to notify the Android client.
 
-The Android client connects to a socket that whose IP address is of the OSX device that is running the JWS and OSX Client. It then sends JSON messages to the JWS using that socket. It also receives JSON to show in list of any new incoming iMessages.
+The [Android client](./PieMessage-Android/) connects to a socket that whose IP address is of the OSX device that is running the JWS and OSX Client. It then sends JSON messages to the JWS using that socket. It also receives JSON to show in list of any new incoming iMessages.
 
 ## Requirements
 - OSX device
