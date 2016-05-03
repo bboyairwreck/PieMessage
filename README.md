@@ -17,10 +17,10 @@ There are 4 parts to the PieMessage.
 - **OSX Client**
 - **Android Client**
 
-The messages.applescript is the most important part of the project. It is what makes sending iMessages possible. This script is what sends an iMessage message.
+The [messages.applescript](./messages.applescript) is arguably the most important part of the project. It is what makes sending iMessages possible. This script is what sends an iMessage message.
 
 The OSX Client & JWS run on any OSX machine (Macbook, Mac, etc.).
-If the OSX Client receives a socket *'outgoing'* JSON message from the JWS, it will call the messages.applescript to send the iMessage. If the OSX Client detects any changes to the "Messages" sqlite database file where a new message has been received, it will send the JWS a socket *'incoming'* JSON message.
+If the OSX Client receives a socket *'outgoing'* JSON message from the JWS, it will call the messages.applescript to send the iMessage. If the OSX Client detects any changes to the "Messages" sqlite database file where a new message has been received, it will send the JWS a socket *'incoming'* JSON message. Incoming messages are detected from a change from the sqlite chat.db of the 'Messages' app whose default location is ~/Library/Messages/chat.db. I have provided a database schema to help visualize the database in the pdf, [MessagesSchema.pdf](./MessagesSchema.pdf). 
 
 The JWS is what connects the OSX Client to the Android client. If the JWS receives a socket 'outgoing' JSON message from the Android client, it will pass it to the OSX Client to tell it to send the iMessage that was requested from the Android. If the JWS recieves a socket *'incoming'* JSON message from the OSX Client, it means the OSX Client has detected a new message and wants the JWS to notify the Android client.
 
@@ -31,6 +31,7 @@ The Android client connects to a socket that whose IP address is of the OSX devi
 - Public IP for OSX device
 - iCloud account w/ iMessage enabled
 - Android device (4.0+)
+- Java JDK
 
 #### Optional Requirement
 - IntelliJ IDEA
@@ -40,16 +41,16 @@ The Android client connects to a socket that whose IP address is of the OSX devi
 ### On OSX Device
 1. Open the Messages application and add your iCloud account in Messages > Preferences > Accounts.
 2. Clone the PieMessage project onto your OSX Device.
-3. Move /messages.applescript to your ~ home directory (/Users/<username>).
-4. Open the JavaWebServer/ as a project in IntelliJ. Run the Server class.
-5. Open the PieOSXClient/ as a project in IntelliJ.
-6. Edit the *socketAddress* value in PieOSXClient/src/Constants.java to your public IP address that is linked to your OSX device.
-7. Run PieOSXClient class.
+3. Move [messages.applescript](./messages.applescript) to your ~ home directory (/Users/<username>).
+4. Open the [JavaWebServer/](./JavaWebServer) as a project in IntelliJ. Run the [Server](./JavaWebServer/src/Server.java) class.
+5. Open the [PieOSXClient/](./PieOSXClient) as a project in IntelliJ.
+6. Edit the *socketAddress* value in [PieOSXClient/src/Constants.java](./PieOSXClient/src/Constants.java) to your public IP address that is linked to your OSX device.
+7. Run [PieOSXClient](PieOSXClient/src/PieOSXClient.java) class.
 
 ### On Android device
-1. Open PieMessage-Android/ as a project in Android Studio.
-2. Edit the *socketAddress* value in /app/src/main/java/com/ericchee/bboyairwreck/piemessage/Constants.java to your public IP address that is linked to your OSX device.
-3. Compile to any Android device.
+1. Open [PieMessage-Android/](./PieMessage-Android/) as a project in Android Studio.
+2. Edit the *socketAddress* value in [/app/.../Constants.java](./PieMessage-Android/app/src/main/java/com/ericchee/bboyairwreck/piemessage/Constants.java) to your public IP address that is linked to your OSX device.
+3. Compile apk to any Android device.
 
 ## WishList
 Since I've moved onto other projects and haven't had time to finish this, there are few things that wanted to implement. It would be nice to combine the OSX Client and the JWS. Also the OSX Client sometimes timesout and loses socket connection over a 2 hour+ period. I'm not sure if this is my own internet, the OSX it self.
