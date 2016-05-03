@@ -1,4 +1,4 @@
-# PieMessage
+# PieMessage - iMessage on Android
 This is project allows Android clients to communicate using iMessage.
 
 ## Video Demonstration
