@@ -11,7 +11,7 @@ This project is a super alpha prototype. I am releasing it because I need your h
 
 ## About
 
-There are 4 parts to the PieMessage.
+There are 4 parts to the PieMessage project.
 - **messages.applescript**
 - **Java Web Server (JWS)**
 - **OSX Client**
