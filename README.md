@@ -3,7 +3,7 @@ This is project allows Android clients to communicate using iMessage.
 
 
 ## Disclaimer
-This project is a super alpha prototype. I am releasing it because I need your help
+This project is a super alpha prototype. I am releasing it because I need your help. :)
 
 ## About
 
@@ -45,7 +45,7 @@ The Android client connects to a socket that whose IP address is of the OSX devi
 3. Compile to any Android device.
 
 ## WishList
-Since I've moved onto other projects and haven't had time to finish this, it would be nice to combine the OSX Client and the JWS. Also the OSX Client sometimes timesout and loses socket connection over a 2 hour+ period. I'm not sure if this is my own internet, the OSX it self.
+Since I've moved onto other projects and haven't had time to finish this, there are few things that wanted to implement. It would be nice to combine the OSX Client and the JWS. Also the OSX Client sometimes timesout and loses socket connection over a 2 hour+ period. I'm not sure if this is my own internet, the OSX it self.
 
 Also it is possible to recieve group messaging, just not send it. Unfortunately I couldnt figure out an applescript to send to multiple clients in a single conversation thread. You definitely can send multiple *individual* messages at once but that still isn't in the same conversation thread. The only reason why we can receive is because it's just a chat table in the sqlite database on the OSX device.
 
