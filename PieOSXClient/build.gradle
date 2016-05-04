@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'PieOSXClient'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.json:json:20160212'
+  compile 'org.xerial:sqlite-jdbc:3.8.11.2'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'osx_client'
+    version =  '0.1.0'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src'
+    }
+  }
+}
