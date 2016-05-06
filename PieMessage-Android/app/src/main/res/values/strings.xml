@@ -6,4 +6,6 @@
     <string name="title_activity_conversation">ConversationActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="pref_socket_address_key">prefSocketAddress</string>
+    <string name="welcome_title">Welcome to\nPie Message!</string>
 </resources>

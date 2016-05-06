@@ -1,6 +1,8 @@
 package com.ericchee.bboyairwreck.piemessage;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -33,7 +35,9 @@ public class SendMessageTask extends AsyncTask {
 
         try {
             Log.i(TAG, "Entering Client");
-            socket = new Socket(Constants.socketAddress, 5000);
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this.activity);
+            String socketAddress = sharedPreferences.getString(activity.getString(R.string.pref_socket_address_key), "127.0.0.1");
+            socket = new Socket(socketAddress, 5000);
             PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
