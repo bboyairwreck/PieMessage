@@ -27,6 +27,8 @@ public class ChatsActivity extends AppCompatActivity implements ReceiveMessagesS
     ReceiveMessagesService receiveMessagesService;
     private boolean boundReceiveService = false;
 
+    private static final int SETTINGS_RESULT = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,6 +150,8 @@ public class ChatsActivity extends AppCompatActivity implements ReceiveMessagesS
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent piePreferenceIntent = new Intent(this, PiePreferenceActivity.class);
+            startActivityForResult(piePreferenceIntent, SETTINGS_RESULT);
             return true;
         }
 

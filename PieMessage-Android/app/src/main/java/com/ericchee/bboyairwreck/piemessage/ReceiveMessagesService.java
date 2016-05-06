@@ -8,11 +8,13 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
@@ -67,7 +69,9 @@ public class ReceiveMessagesService extends IntentService {
 
             Log.i(TAG, "onHandleIntent");
             try {
-                socket = new Socket(Constants.socketAddress, 5000);
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                String socketAddress = sharedPreferences.getString(getString(R.string.pref_socket_address_key), "127.0.0.1");
+                socket = new Socket(socketAddress, 5000);
                 PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
