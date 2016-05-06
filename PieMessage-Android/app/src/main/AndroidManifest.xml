@@ -28,9 +28,6 @@
         </activity>
 
         <service
-            android:name=".Legacy.ReceiveMessagesLegacyService"
-            android:exported="false" />
-        <service
             android:name="com.ericchee.bboyairwreck.piemessage.ReceiveMessagesService"
             android:exported="false" />
 
