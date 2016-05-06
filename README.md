@@ -42,7 +42,6 @@ The [Android client](./PieMessage-Android/) connects to a socket that whose IP a
 1. Open the Messages application and add your iCloud account in Messages > Preferences > Accounts.
 2. Clone the PieMessage project onto your OSX Device.
 3. Edit the *socketAddress* value in [PieOSXClient/src/Constants.java](./PieOSXClient/src/Constants.java) to your public IP address that is linked to your OSX device.
-4. Edit the *socketAddress* value in [/app/.../Constants.java](./PieMessage-Android/app/src/main/java/com/ericchee/bboyairwreck/piemessage/Constants.java) to your public IP address that is linked to your OSX device.
 
 You can do either terminal or GUI setup from here. If you will be working on this you will eventually need to set it up in IntelliJ/Android Studio or get it to work in your IDE of choice.
 
