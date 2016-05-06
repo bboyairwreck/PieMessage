@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Settings">
+        <EditTextPreference
+            android:title="Socket IP address"
+            android:summary="Set your OSX Client's IP address"
+            android:key="@string/pref_socket_address_key"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

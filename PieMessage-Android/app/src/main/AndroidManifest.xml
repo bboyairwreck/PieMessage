@@ -5,32 +5,40 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.ericchee.bboyairwreck.piemessage.PieMessageApplication"
+        android:name=".PieMessageApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.ericchee.bboyairwreck.piemessage.MessageActivity"
+            android:name=".MessageActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.ericchee.bboyairwreck.piemessage.ChatsActivity"
+            android:name=".ChatsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"
-            >
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <service
+            android:name=".ReceiveMessagesService"
+            android:exported="false" />
+
+        <activity android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <service
-            android:name="com.ericchee.bboyairwreck.piemessage.ReceiveMessagesService"
-            android:exported="false" />
-
+        <activity android:name=".PiePreferenceActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme"
+            />
     </application>
 
 </manifest>
