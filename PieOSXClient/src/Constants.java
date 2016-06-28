@@ -7,7 +7,7 @@ import java.util.TimeZone;
  * Created by eric on 12/8/15.
  */
 public class Constants {
-    public static final String socketAddress = "127.0.0.1"; // INSERT YOUR PUBLIC IP HERE linked to OSX Client
+    public static final String socketAddress = "192.168.1.14"; // 
 
     public static final long IncomingThreadResetDuration = 10 * 60 * 1000;  // 10 min
 
