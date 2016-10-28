@@ -5,40 +5,35 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".PieMessageApplication"
+        android:name="com.ericchee.bboyairwreck.piemessage.PieMessageApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MessageActivity"
+            android:name="com.ericchee.bboyairwreck.piemessage.MessageActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ChatsActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
-        <service
-            android:name=".ReceiveMessagesService"
-            android:exported="false" />
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name="com.ericchee.bboyairwreck.piemessage.ChatsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".PiePreferenceActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme"
-            />
+        <service
+            android:name=".Legacy.ReceiveMessagesLegacyService"
+            android:exported="false" />
+        <service
+            android:name="com.ericchee.bboyairwreck.piemessage.ReceiveMessagesService"
+            android:exported="false" />
+
     </application>
 
 </manifest>
