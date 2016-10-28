@@ -2,8 +2,6 @@ package com.ericchee.bboyairwreck.piemessage;
 
 import android.app.Application;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.util.TreeMap;
@@ -41,14 +39,6 @@ public class PieMessageApplication extends Application {
         chatsMap = new TreeMap<>();
         dbHelper.getAllChats();
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        if (sharedPreferences.contains(getString(R.string.pref_socket_address_key))) {
-            startReceieveMessagesService();
-        }
-    }
-
-    public void startReceieveMessagesService() {
         Intent receiveService = new Intent(this, ReceiveMessagesService.class);
         startService(receiveService);
     }
